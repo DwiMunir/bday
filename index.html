@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birtday My Queen</title>
+    <link rel="stylesheet" href="./src/tailwind.css">
+</head>
+<body class="flex justify-center">
+    <div class="card lg:w-2/5 w-11/12 bg-gray-50 shadow-md rounded-md lg:p-10 p-5 lg:mt-20 mt-5 text-center" id="card1">
+        <h3 class="text-center mt-5 mb-10 text-gray-700">Hi My Queen</h3>
+        <input type="text" class="w-full rounded-md px-4 py-2 text-sm ring-1 ring-gray-200-300" placeholder="Nama lengkap kamu..." id="name">
+        <button onclick="return clickButton(this)" class="px-6 py-1 bg-orange-300 rounded-sm text-gray-50 mt-5" id="btn-1">Next</button>
+    </div>
+    <div class="card lg:w-2/5 w-11/12 bg-gray-50 shadow-md rounded-md lg:p-10 p-5 lg:mt-20 mt-5 text-center" id="card2">
+        <h1 class="text-center mt-5 mb-5 text-gray-700">Happy Birtday My Queen</h1>
+        <p class="text-gray-400 mb-10 text-sm">Semoga apa yang dicita-citakan segera terwujud, jadi anak sholehah, makin rajin, jangan maksain diri buat aktifitas. Jaga kesehatan terus, jangan telat makan. yang lain udah sering di ucapin takut bosan kamunya, hehe</p>
+        <img src="./src/images/image1.jpg" alt="" srcset="" class="lg:w-4/12 w-7/12 mx-auto rounded-lg">
+        <button onclick="return clickButton(this)" class="px-6 py-1 bg-orange-300 rounded-sm text-gray-50 mt-5" id="btn-2">Next</button>
+    </div>
+    <div class="card lg:w-2/5 w-11/12 bg-gray-50 shadow-md rounded-md lg:p-10 p-5 lg:mt-20 mt-5 text-center" id="card3">
+        <h1 class="text-center mt-5 mb-5 text-gray-700">Happy Birtday My Queen</h1>
+        <p class="text-gray-400 mb-10 text-sm">Maaf ya kalo aku telat ngucapinnya</p>
+        <img src="./src/images/image2.jpg" alt="" srcset="" class="lg:w-4/12 w-7/12 mx-auto rounded-lg">
+        <button onclick="return clickButton(this)" class="px-6 py-1 bg-orange-300 rounded-sm text-gray-50 mt-5" id="btn-3">Next</button>
+    </div>
+    <div class="card lg:w-2/5 w-11/12 bg-gray-50 shadow-md rounded-md lg:p-10 p-5 lg:mt-20 mt-5 text-center" id="card4">
+        <h1 class="text-center mt-5 mb-5 text-gray-700">Happy Birtday My Queen</h1>
+        <p class="text-gray-400 mb-10 text-sm">Aku sayangg banget sama kamu</p>
+        <img src="./src/images/image3.jpg" alt="" srcset="" class="lg:w-4/12 w-7/12 mx-auto rounded-lg">
+        <button onclick="return clickButton(this)" class="px-6 py-1 bg-orange-300 rounded-sm text-gray-50 mt-5" id="btn-4">Next</button>
+    </div>
+    <div class="card lg:w-2/5 w-11/12 bg-gray-50 shadow-md rounded-md lg:p-10 p-5 lg:mt-20 mt-5 text-center" id="card5">
+        <h1 class="text-center mt-5 mb-5 text-gray-700">Happy Birtday My Queen</h1>
+        <p class="text-gray-400 mb-10 text-sm">Maaf kalo aku jarang chat, lebih ngutamain kerjaan</p>
+        <img src="./src/images/image4.jpg" alt="" srcset="" class="lg:w-4/12 w-7/12 mx-auto rounded-lg">
+        <button onclick="return clickButton(this)" class="px-6 py-1 bg-orange-300 rounded-sm text-gray-50 mt-5" id="btn-5">Next</button>
+    </div>
+    <div class="card lg:w-2/5 w-11/12 bg-gray-50 shadow-md rounded-md lg:p-10 p-5 lg:mt-20 mt-5 text-center" id="card6">
+        <h1 class="text-center mt-5 mb-5 text-gray-700">Happy Birtday My Queen</h1>
+        <p class="text-gray-400 mb-10 text-sm">I Love You Bela Indah Lestari</p>
+        <img src="./src/images/image5.jpg" alt="" srcset="" class="lg:w-4/12 w-7/12 mx-auto rounded-lg">
+        <div class="flex justify-center items-center mt-10">
+            <img src="./src/images/image4.jpg" alt="" srcset="" class="lg:w-4/12 w-3/12 mx-auto rounded-lg">
+            <img src="./src/images/image3.jpg" alt="" srcset="" class="lg:w-4/12 w-3/12 mx-auto rounded-lg">
+            <img src="./src/images/image2.jpg" alt="" srcset="" class="lg:w-4/12 w-3/12 mx-auto rounded-lg">
+            <img src="./src/images/image1.jpg" alt="" srcset="" class="lg:w-4/12 w-3/12 mx-auto rounded-lg">
+        </div>
+    </div>
+
+
+    <audio src="./src/music/music1.mp3" autoplay id="music">
+        <p>If you are reading this, it is because your browser does not support the audio element.</p>
+    </audio>
+    <script src="./src/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.card').hide()
+            $('#card1').show()
+        })
+        function clickButton(that) {
+            let id = $(that).attr('id')
+            switch (id) {
+                case 'btn-1':
+                    $('#music')[0].play()
+                    let name = $('#name').val()
+                    if(name.length > 0){
+                        if(name.toLowerCase() === 'bela indah lestari'){
+                            $('#card1').hide()
+                            $('#card2').show()
+                        }else{
+                            alert('hayoo namamu bukan bela, kalo pacarku bela namanya.')
+                        }
+                    }else{
+                        alert('Namanya di isi dulu ya sayangg!')
+                    }           
+                    break;
+                case 'btn-2':
+                    $('.card').hide()
+                    $('#card3').show()
+                    break
+                case 'btn-3':
+                    $('.card').hide()
+                    $('#card4').show()
+                    break
+                case 'btn-4':
+                    $('.card').hide()
+                    $('#card5').show()
+                    break
+                case 'btn-5':
+                    $('.card').hide()
+                    $('#card6').show()
+                    break
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
